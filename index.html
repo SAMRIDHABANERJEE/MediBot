@@ -140,9 +140,9 @@
 
   <div class="topbar">
     <div class="brand">
-      <div class="mark">BS</div>
+      <div class="mark">MB</div>
       <div>
-        <h1>Bio-Sentinel</h1>
+        <h1>Medi Bot</h1>
         <div class="sub">Hospital Operations &amp; Waste-Robot Management Dashboard</div>
       </div>
     </div>
@@ -157,7 +157,7 @@
 
     <div class="alertbar" id="alertbar">
       <span class="icon">⚠</span>
-      <span><b>Hazard alert:</b> <span id="alertText">Sharps compartment on BS-Unit 02 has reached 95% capacity near ICU.</span></span>
+      <span><b>Hazard alert:</b> <span id="alertText">Sharps compartment on MB-Unit 02 has reached 95% capacity near ICU.</span></span>
       <button class="dismiss" onclick="dismissAlert()">Dismiss</button>
     </div>
 
@@ -178,7 +178,7 @@
 
         <div class="section-gap">
           <h2>Remote Manual Override</h2>
-          <div class="hint">Selected unit: <b id="selUnit">BS-Unit 01</b></div>
+          <div class="hint">Selected unit: <b id="selUnit">MB-Unit 01</b></div>
           <div class="override-panel">
             <button class="ov-btn" onclick="override('pause')">⏸ Pause</button>
             <button class="ov-btn" onclick="override('resume')">▶ Resume</button>
@@ -227,7 +227,7 @@
     </div>
   </div>
 
-  <footer>Bio-Sentinel Prototype · Software-only management dashboard · No physical hardware behaviour is simulated · Smart India Hackathon 2026</footer>
+  <footer>Medi Bot Prototype · Software-only management dashboard · No physical hardware behaviour is simulated · Smart India Hackathon 2026</footer>
 
 <script>
 (function(){
@@ -250,22 +250,22 @@
   ];
 
   const schedule = [
-    {time:"07:30", loc:"Ward A", shift:0, unit:"BS-Unit 01", status:"done"},
-    {time:"08:15", loc:"ICU",    shift:0, unit:"BS-Unit 02", status:"done"},
-    {time:"09:00", loc:"Ward C", shift:0, unit:"BS-Unit 01", status:"done"},
-    {time:"12:30", loc:"OT",     shift:1, unit:"BS-Unit 02", status:"progress"},
-    {time:"13:15", loc:"Ward B", shift:1, unit:"BS-Unit 01", status:"upcoming"},
-    {time:"16:00", loc:"ICU",    shift:1, unit:"BS-Unit 02", status:"upcoming"},
-    {time:"20:30", loc:"Ward A", shift:2, unit:"BS-Unit 03", status:"upcoming"},
-    {time:"22:00", loc:"Ward C", shift:2, unit:"BS-Unit 03", status:"upcoming"},
+    {time:"07:30", loc:"Ward A", shift:0, unit:"MB-Unit 01", status:"done"},
+    {time:"08:15", loc:"ICU",    shift:0, unit:"MB-Unit 02", status:"done"},
+    {time:"09:00", loc:"Ward C", shift:0, unit:"MB-Unit 01", status:"done"},
+    {time:"12:30", loc:"OT",     shift:1, unit:"MB-Unit 02", status:"progress"},
+    {time:"13:15", loc:"Ward B", shift:1, unit:"MB-Unit 01", status:"upcoming"},
+    {time:"16:00", loc:"ICU",    shift:1, unit:"MB-Unit 02", status:"upcoming"},
+    {time:"20:30", loc:"Ward A", shift:2, unit:"MB-Unit 03", status:"upcoming"},
+    {time:"22:00", loc:"Ward C", shift:2, unit:"MB-Unit 03", status:"upcoming"},
   ];
 
   const robots = [
-    {id:"BS-Unit 01", status:"active",  ward:"Ward B (en route)", battery:78,
+    {id:"MB-Unit 01", status:"active",  ward:"Ward B (en route)", battery:78,
       bins:{Sharps:38, Infectious:52, General:20, Plastics:30}},
-    {id:"BS-Unit 02", status:"sorting", ward:"OT", battery:64,
+    {id:"MB-Unit 02", status:"sorting", ward:"OT", battery:64,
       bins:{Sharps:91, Infectious:60, General:35, Plastics:22}},
-    {id:"BS-Unit 03", status:"charging", ward:"Dock", battery:41,
+    {id:"MB-Unit 03", status:"charging", ward:"Dock", battery:41,
       bins:{Sharps:12, Infectious:18, General:10, Plastics:15}},
   ];
   let selectedUnit = robots[0].id;
@@ -405,9 +405,9 @@
 
   // ---------------- Alerts ----------------
   const alertTemplates = [
-    {cls:"", text:"Sharps compartment on BS-Unit 02 has reached 95% capacity near ICU."},
+    {cls:"", text:"Sharps compartment on MB-Unit 02 has reached 95% capacity near ICU."},
     {cls:"warn", text:"Bin fill level at Ward C waste point crossed 85% threshold."},
-    {cls:"info", text:"BS-Unit 01 completed contactless pickup at Ward A (0 staff contact events)."},
+    {cls:"info", text:"MB-Unit 01 completed contactless pickup at Ward A (0 staff contact events)."},
     {cls:"warn", text:"Route re-optimized: OT round delayed by 6 minutes, path adjusted automatically."},
     {cls:"", text:"Edge AI flagged possible mixed-hazard item at ICU collection point for staff review."},
   ];
